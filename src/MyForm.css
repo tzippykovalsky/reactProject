@@ -1,0 +1,38 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.formDonate {
+    border: 1px solid;
+    border-color: rgb(155, 140, 112);
+    margin-left: 50px;
+    direction: rtl;
+    width: 550px;
+    height: 540px;  
+
+}
+
+
+.donationDetails{ 
+     margin-top: 10px;
+     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+
+}
+.payment{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+  
+}
+
+.cardsend{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  
+}

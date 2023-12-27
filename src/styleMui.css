@@ -1,0 +1,22 @@
+.timelineDot {
+    color: rgb(36, 52, 83);
+  }
+  
+  .timelineContent {
+    padding: 12px;
+    text-align: center;
+  }
+  .formDetails{
+      & > :not(style) {
+    margin: 1;
+    width: 25ch;
+  }
+  }
+  .itemInStatus{
+  width:170px;
+  color: rgb(0, 0, 0);
+  /* color: #bda35c; */
+   
+}
+
+
