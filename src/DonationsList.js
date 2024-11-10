@@ -20,6 +20,8 @@ const DonationsList = (props) => {
   const [sort, setSort] = React.useState('');
 
   useEffect(() => {
+     const sortedArr = [...props.DonationsArr].sort((a, b) => new Date(b.donationTime) - new Date(a.donationTime));
+    props.setDonationsArr(sortedArr);
     if (isSearching) {
       setFilteredDonationsArr(
         props.DonationsArr.filter((item) => item.name.includes(searchValue) || item.dedication.includes(searchValue))
