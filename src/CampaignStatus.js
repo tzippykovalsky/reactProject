@@ -59,8 +59,9 @@ const CampaignStatus = ({ DonationsArr }) => {
             </Item>
             <Item sx={{ bgcolor: "#bda35c", width: 170, color: "black" }}>
               <span>סכום</span>
-              <div >{Math.round(sumDonations)}</div>
-
+              <div >{coin.coin.currencyType == "shekel" && " ₪ "}{Math.round(fromShekelToX(sumDonations, coin.coin.dollarAmount, coin.coin.currencyType)).toLocaleString()}
+                {coin.coin.currencyType == "dollar" && " $ "}
+              </div>
             </Item>
           </Stack>
            <Box>

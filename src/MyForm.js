@@ -150,7 +150,7 @@ const MyForm = ({ setDonationsArr }) => {
 
             </div>
             <Box component="form" sx={{ '& > :not(style)': { m: 1, width: '52ch' }, }} noValidate autoComplete="off" >
-              <TextField id="standard-basic" label="הקדשה" variant="standard" />
+              <TextField id="standard-basic" label="הקדשה" variant="standard"  {...register("dedication")} />
             </Box>
 
             {activeStep == 1 && <div className="payment">
