@@ -47,7 +47,7 @@ const OneDonations = ({ myDonations }) => {
         <CardHeader color="black"
           avatar={<Avatar sx={{ bgcolor: "#bb9a3d" }} alt={myDonations.name} src=" " />}
           action={<IconButton aria-label="settings" color="black">
-            {coinType.coin.currencyType == "shekel" && "₪"} {Math.round(fromShekelToX(myDonations.sum, coinType.coin.dollarAmount, coinType.coin.currencyType))}  {coinType.coin.currencyType != "shekel" && "$"}
+            {coinType.coin.currencyType == "shekel" && "₪"} {(Math.round(fromShekelToX(myDonations.sum, coinType.coin.dollarAmount, coinType.coin.currencyType))).toLocaleString()}  {coinType.coin.currencyType != "shekel" && "$"}
           </IconButton>}
           title={myDonations.name}
           subheader={`התקבלה לפני ${timeAgo}`}
