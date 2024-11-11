@@ -21,13 +21,12 @@ const OneDonations = ({ myDonations }) => {
     const differenceInHours = Math.floor(differenceInMinutes / 60);
     const differenceInDays = Math.floor(differenceInMinutes / (60 * 24));
 
-    if (differenceInMinutes < 60) {
+    if (differenceInMinutes < 60)
       return `${differenceInMinutes} דקות `;
-    } else if (differenceInHours < 24) {
+    if (differenceInHours < 24)
       return `${differenceInHours} שעות `;
-    } else {
-      return `${differenceInDays} ימים `;
-    }
+    return `${differenceInDays} ימים `;
+
   }
 
   const StyledRating = styled(Rating)({
@@ -41,13 +40,13 @@ const OneDonations = ({ myDonations }) => {
 
   return (
     <>
-
-
       <Card sx={{ minWidth: 350, height: 150, m: 2 }}>
         <CardHeader color="black"
           avatar={<Avatar sx={{ bgcolor: "#bb9a3d" }} alt={myDonations.name} src=" " />}
           action={<IconButton aria-label="settings" color="black">
-            {coinType.coin.currencyType == "shekel" && "₪"} {(Math.round(fromShekelToX(myDonations.sum, coinType.coin.dollarAmount, coinType.coin.currencyType))).toLocaleString()}  {coinType.coin.currencyType != "shekel" && "$"}
+            {coinType.coin.currencyType == "shekel" && "₪"}
+            {(Math.round(fromShekelToX(myDonations.sum, coinType.coin.dollarAmount, coinType.coin.currencyType))).toLocaleString()}
+            {coinType.coin.currencyType != "shekel" && "$"}
           </IconButton>}
           title={myDonations.name}
           subheader={`התקבלה לפני ${timeAgo}`}
@@ -57,7 +56,7 @@ const OneDonations = ({ myDonations }) => {
             {myDonations.dedication}
           </Typography>
 
-          <StyledRating sx={{marginLeft:40}}
+          <StyledRating sx={{ marginLeft: 40 }}
             name="customized-color"
             defaultValue={0}
             icon={<FavoriteIcon fontSize="inherit" />}

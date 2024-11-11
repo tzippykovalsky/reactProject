@@ -20,13 +20,10 @@ const DonationsList = (props) => {
   useEffect(() => {
     // const sortedArr = [...props.DonationsArr].sort((a, b) => new Date(b.donationTime) - new Date(a.donationTime));
     // props.setDonationsArr(sortedArr);
-    if (searchValue !== "") {
       setFilteredDonationsArr(
         props.DonationsArr.filter((item) => item.name.includes(searchValue) || item.dedication.includes(searchValue))
       );
-    } else {
-      setFilteredDonationsArr(props.DonationsArr);
-    }
+ 
   }, [props.DonationsArr, searchValue]);// הפונקציה תתבצע בעת שינוי באחד השתנים הבאים
 
 
@@ -39,13 +36,13 @@ const DonationsList = (props) => {
     const sortWay = e.target.value;
     if (sortWay === "sum") {
       const sortedArr = [...props.DonationsArr].sort((a, b) => b.sum - a.sum);
-      props.setDonationsArr(sortedArr);
+      setFilteredDonationsArr(sortedArr);
     } else if (sortWay === "newD") {
       const sortedArr = [...props.DonationsArr].sort((a, b) => new Date(b.donationTime) - new Date(a.donationTime));
-      props.setDonationsArr(sortedArr);
+      setFilteredDonationsArr(sortedArr);
     } else if (sortWay === "oldD") {
       const sortedArr = [...props.DonationsArr].sort((a, b) => new Date(a.donationTime) - new Date(b.donationTime));
-      props.setDonationsArr(sortedArr);
+      setFilteredDonationsArr(sortedArr);
     }
     setSort(e.target.value);
   };

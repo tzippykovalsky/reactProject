@@ -24,15 +24,11 @@ const CampaignStatus = ({ DonationsArr }) => {
 
   useEffect(() => {
 
-
     setSumDonations((prevSum) => {
       const newSum = prevSum + DonationsArr[DonationsArr.length - 1].sum;
       setSliderValue(Math.round(100 * newSum / goalCampaign));
       return newSum;
     });
-
-
-
 
   }, [DonationsArr]);
   
@@ -60,7 +56,8 @@ const CampaignStatus = ({ DonationsArr }) => {
             </Item>
             <Item sx={{ bgcolor: "#bda35c", width: 170, color: "black" }}>
               <span>סכום</span>
-              <div >{coin.coin.currencyType == "shekel" && " ₪ "}{Math.round(fromShekelToX(sumDonations, coin.coin.dollarAmount, coin.coin.currencyType)).toLocaleString()}
+              <div >{coin.coin.currencyType == "shekel" && " ₪ "}
+                {Math.round(fromShekelToX(sumDonations, coin.coin.dollarAmount, coin.coin.currencyType)).toLocaleString()}
                 {coin.coin.currencyType == "dollar" && " $ "}
               </div>
             </Item>

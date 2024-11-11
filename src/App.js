@@ -138,7 +138,7 @@ function App() {
           
           <ChoseColor />
           <Routes>
-            <Route path="/" element={<DonationsList setDonationsArr={setDonationsArr} DonationsArr={DonationsArr}  />}></Route>
+            <Route path="/" element={<DonationsList DonationsArr={DonationsArr}  />}></Route>
             <Route path="ToDonate" element={<MyForm setDonationsArr={setDonationsArr} />}></Route>
           </Routes>
           <Footer/>
