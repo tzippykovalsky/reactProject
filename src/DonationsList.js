@@ -12,28 +12,27 @@ const DonationsList = (props) => {
 
   //מערך שיכיל את התרומות לאחר חיפוש 
   const [filteredDonationsArr, setFilteredDonationsArr] = useState([]);
-  //האם מבוצע חיפוש
-  const [isSearching, setIsSearching] = useState(false);
   //הערך שנכתב בתיבת החיפוש
   const [searchValue, setSearchValue] = useState("");
   //קשור למיון לפי mui
-  const [sort, setSort] = React.useState('');
+  const [sort, setSort] = React.useState('newD');
 
   useEffect(() => {
-    if (isSearching) {
+    // const sortedArr = [...props.DonationsArr].sort((a, b) => new Date(b.donationTime) - new Date(a.donationTime));
+    // props.setDonationsArr(sortedArr);
+    if (searchValue !== "") {
       setFilteredDonationsArr(
         props.DonationsArr.filter((item) => item.name.includes(searchValue) || item.dedication.includes(searchValue))
       );
     } else {
       setFilteredDonationsArr(props.DonationsArr);
     }
-  }, [props.DonationsArr, isSearching, searchValue]);// הפונקציה תתבצע בעת שינוי באחד השתנים הבאים
+  }, [props.DonationsArr, searchValue]);// הפונקציה תתבצע בעת שינוי באחד השתנים הבאים
 
 
-  const searchByName = (e) => {
+  const search = (e) => {
     const searchValue = e.target.value;
     setSearchValue(searchValue);//useEffect מופעל כעת
-    setIsSearching(searchValue !== "");
   };
 
   const sorted = (e) => {
@@ -63,7 +62,7 @@ const DonationsList = (props) => {
           <Box
             component="form"
             sx={{ '& > :not(style)': { width: '25ch' } }} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="... חפש  לפי שם או הקדשה" variant="standard" onChange={searchByName} />
+            <TextField id="outlined-basic" label="... חפש  לפי שם או הקדשה" variant="standard" onChange={search} />
           </Box>
 
           <FormControl sx={{ width: "16ch", marginLeft: "3ch" }}>
@@ -84,7 +83,7 @@ const DonationsList = (props) => {
           </FormControl>
         </div>
 
-        {filteredDonationsArr.length > 0 && (
+        {filteredDonationsArr.length > 0 ?(
           <ImageList sx={{ width: 1300, height: 600, border: 1, borderColor: "gray", marginLeft: 14.5 }}>
             <ImageListItem sx={{ marginLeft: 5 }}>
               <div className="alldonations">
@@ -96,10 +95,10 @@ const DonationsList = (props) => {
               </div>
             </ImageListItem>
           </ImageList>
-        )}
-        {filteredDonationsArr.length === 0 && isSearching && (
+        ):  <div style={{textAlign:"center"}}>לא נמצאו תרומות</div>}
+        {/* {filteredDonationsArr.length === 0 && searchValue !== "" && (
           <div style={{textAlign:"center"}}>לא נמצאו תרומות</div>
-        )}
+        )} */}
 
 
       </div>
