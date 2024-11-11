@@ -18,6 +18,7 @@ const DonationsList = (props) => {
   const [sort, setSort] = React.useState('newD');
 
   useEffect(() => {
+// רוצה שיתחיל תמיד עם מערך ממוין עפ חדש עושה בעיות לבדוק
     // const sortedArr = [...props.DonationsArr].sort((a, b) => new Date(b.donationTime) - new Date(a.donationTime));
     // props.setDonationsArr(sortedArr);
     if (searchValue !== "") {
