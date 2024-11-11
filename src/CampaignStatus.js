@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Box, Slider, Paper, Stack, styled } from '@mui/material';
-import { ThemeContext } from "./Contexts";
+import { CoinContext, ThemeContext } from "./Contexts";
 import myImage from './images/boneiolam_riverdaleevent2023_newertopbanner3.gif';
-
+import {fromShekelToX} from "./dollarUtils"
 
 
 const CampaignStatus = ({ DonationsArr }) => {
@@ -35,7 +35,8 @@ const CampaignStatus = ({ DonationsArr }) => {
 
 
   }, [DonationsArr]);
-
+  
+  let coin = useContext(CoinContext);
   let color = useContext(ThemeContext);
   return (
     <>
