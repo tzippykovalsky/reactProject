@@ -22,6 +22,8 @@ function App() {
       name: "משפחת קובלסקי",
       dedication: "להצלחת הפרויקט בריאקט",
       sum: 8000,
+      //יש לשים לב חודש מתחיל ב-0
+      //כלומר ינואר=0
       donationTime: new Date(2023, 11, 21, 3, 42),
     },
     {
@@ -52,13 +54,13 @@ function App() {
       name: "גאולה מזרחי",
       dedication: "לזכות שלמה מזרחי",
       sum: 4500,
-      donationTime: new Date(2023, 11, 21, 6, 52),
+      donationTime: new Date(2024, 10, 12, 18, 42),
     },
     {
       name: "riki",
       dedication: "לכבוד הרבה שליטא",
       sum: 600,
-      donationTime: new Date(2023, 11, 21, 3, 42),
+      donationTime: new Date(2024, 10, 12, 19, 42),
     },
     {
       name: "libi",

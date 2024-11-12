@@ -11,9 +11,11 @@ const NavBar = () => {
 
   const navigate = useNavigate();
   function toDonate() {
+    setValue(1);
     navigate("ToDonate");
   }
   function donations() {
+    setValue(0);
     navigate("/");
   }
 
@@ -25,6 +27,7 @@ const NavBar = () => {
     // setChecked(e.target.value);
     messageByCangeCoin();
   }
+  //אחראי על הפוקוס תרומות/תרומה
   const [value, setValue] = React.useState(0);
 
   const handleChange = (newValue) => {
