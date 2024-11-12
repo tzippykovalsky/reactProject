@@ -22,7 +22,7 @@ const DonationsList = (props) => {
     // const sortedArr = [...props.DonationsArr].sort((a, b) => new Date(b.donationTime) - new Date(a.donationTime));
     // props.setDonationsArr(sortedArr);
       setFilteredDonationsArr(
-        props.DonationsArr.filter((item) => item.name.includes(searchValue) || item.dedication.includes(searchValue))
+        props.DonationsArr.filter((item) => item.name.includes(searchValue) || item.dedication.includes(searchValue)).sort((a, b) => new Date(b.donationTime) - new Date(a.donationTime))
       );
  
   }, [props.DonationsArr, searchValue]);// הפונקציה תתבצע בעת שינוי באחד השתנים הבאים
