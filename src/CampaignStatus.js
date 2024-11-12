@@ -47,7 +47,9 @@ const CampaignStatus = ({ DonationsArr }) => {
           <Stack direction="row" spacing={5} >
             <Item className={color.colorValue === "black" ? "itemInStatus" : ""} sx={{ bgcolor: "#bda35c", width: 170, color: "black" }}>
               <span>יעד הקמפיין</span>
+
               <div >₪ 8,000,000 </div>
+
 
             </Item>
             <Item sx={{ bgcolor: "#bda35c", width: 170, color: "black" }}>
